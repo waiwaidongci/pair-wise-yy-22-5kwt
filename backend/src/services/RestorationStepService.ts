@@ -1,1 +1,1 @@
-import { restorationStepRepository } from "../repositories/RestorationStepRepository"; export const restorationStepService = { list: () => restorationStepRepository.findAll(), create: (row: unknown) => restorationStepRepository.save(row) };
+import { restorationStepRepository } from "../repositories/RestorationStepRepository"; export const restorationStepService = { list: () => restorationStepRepository.findAll(), create: (row: Record<string, unknown>) => restorationStepRepository.save(row) };

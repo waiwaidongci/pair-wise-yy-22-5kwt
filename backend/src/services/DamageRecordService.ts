@@ -1,1 +1,1 @@
-import { damageRecordRepository } from "../repositories/DamageRecordRepository"; export const damageRecordService = { list: () => damageRecordRepository.findAll(), create: (row: unknown) => damageRecordRepository.save(row) };
+import { damageRecordRepository } from "../repositories/DamageRecordRepository"; export const damageRecordService = { list: () => damageRecordRepository.findAll(), create: (row: Record<string, unknown>) => damageRecordRepository.save(row) };

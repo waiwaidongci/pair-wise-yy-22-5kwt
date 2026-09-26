@@ -1,1 +1,13 @@
-import { seed } from "../seed"; export const restorationStepRepository = { findAll: () => seed.restorationStep, save: (row: unknown) => row };
+import { fileStore } from "./FileStore";
+import { seed } from "../seed";
+
+const TABLE = "restorationStep";
+
+export const restorationStepRepository = {
+  findAll(): Record<string, unknown>[] {
+    return fileStore.seedIfAbsent(TABLE, seed.restorationStep as unknown as Array<Record<string, unknown>>);
+  },
+  save(row: Record<string, unknown>) {
+    return fileStore.insert(TABLE, row);
+  }
+};

@@ -16,7 +16,7 @@ export const routes = [
     "route": "/plans"
   },
   {
-    "name": "影像版本",
+    "name": "影像对照",
     "route": "/images"
   }
 ] as const;
