@@ -1,16 +1,38 @@
 import type { ImageVersion } from "../types/ImageVersion";
 
 export const createDefaultImageVersion = (overrides: Partial<ImageVersion> = {}): ImageVersion => ({
-  id: 1 as never,
-  relic_id: 1 as never,
-  plan_id: 1 as never,
-  version_no: "version no 1" as never,
-  image_type: "FRAGILE" as never,
-  file_path: "file path 1" as never,
-  capture_at: "2026-06-11T09:00:00Z" as never,
-  note: "note 1" as never,
+  id: 0,
+  relic_id: 0,
+  plan_id: 0,
+  position: "",
+  stage: "PRE",
+  version_no: "PRE-V1",
+  image_type: "PRE",
+  file_path: "",
+  capture_at: "",
+  note: "",
+  archived: false,
+  archived_at: null,
   ...overrides
 });
 
-export const createImageVersionForm = createDefaultImageVersion;
+export interface ImageVersionForm {
+  relic_id: string;
+  plan_id: string;
+  position: string;
+  stage: string;
+  capture_at: string;
+  note: string;
+}
+
+export const createImageVersionForm = (overrides: Partial<ImageVersionForm> = {}): ImageVersionForm => ({
+  relic_id: "",
+  plan_id: "",
+  position: "",
+  stage: "PRE",
+  capture_at: "",
+  note: "",
+  ...overrides
+});
+
 export const createImageVersionResponse = createDefaultImageVersion;

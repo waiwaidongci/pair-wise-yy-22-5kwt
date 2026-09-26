@@ -47,11 +47,15 @@ CREATE TABLE IF NOT EXISTS image_version (
   id INTEGER PRIMARY KEY,
   relic_id TEXT,
   plan_id TEXT,
+  position TEXT,
+  stage TEXT,
   version_no TEXT,
   image_type TEXT,
   file_path TEXT,
   capture_at TEXT,
-  note TEXT
+  note TEXT,
+  archived BOOLEAN DEFAULT FALSE,
+  archived_at TEXT
 );
 
 CREATE TABLE IF NOT EXISTS audit_log (
